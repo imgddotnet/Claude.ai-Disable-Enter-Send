@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         Claude.ai Disable Enter Send
+// @version      4.1
+// @description  Enterキーは改行のみ、送信はボタンクリックのみ
+// @author       You
+// @match        https://claude.ai/*
+// @grant        none
+// @run-at       document-start
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Enterキーでの送信を完全にブロック（改行は許可）
+    const blockEnterSend = (e) => {
+        if (e.key === 'Enter') {
+            // Claudeの送信処理だけをブロック
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            console.log('🚫 Enter送信をブロック（改行は許可）');
+        }
+    };
+
+    // キャプチャフェーズでClaudeの送信処理をブロック
+    document.addEventListener('keydown', blockEnterSend, true);
+    document.addEventListener('keypress', blockEnterSend, true);
+
+    console.log('✅ Claude Enter改行のみモード - 送信はボタンクリックのみ');
+})();
