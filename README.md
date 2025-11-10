@@ -1,2 +1,2 @@
-# Claude.ai-Disable-Enter-Send
-Claude.aiを日本語IMEで使うとき何でもかんでもEnterキーで送られるのを強引に止めるUserScript
+# Disable-Enter-Send
+Claude.aiやGeminiを日本語IMEで使うときEnterキーでチャットが送られるのを強引に止めるUserScript
